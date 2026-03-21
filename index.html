@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FITK Rooms — IAIN Syekh Nurjati</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -50,7 +50,7 @@ html, body { height: 100%; font-family: 'DM Sans', sans-serif; background: var(-
 
 .logo-area { padding: 16px 16px 14px; border-bottom: 1px solid var(--border); }
 .logo-icon { width: 30px; height: 30px; background: var(--green); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; margin-bottom: 8px; }
-.logo-title { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 800; color: var(--white); letter-spacing: -0.3px; }
+.logo-title { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 800; color: var(--white); letter-spacing: -0.3px; }
 .logo-sub { font-size: 10.5px; color: var(--t3); margin-top: 2px; line-height: 1.4; }
 
 .nav-section { padding: 14px 16px 4px; font-size: 9.5px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.3px; color: var(--t3); }
@@ -74,7 +74,7 @@ html, body { height: 100%; font-family: 'DM Sans', sans-serif; background: var(-
 #main { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-width: 0; }
 
 #topbar { display: flex; align-items: center; gap: 12px; padding: 16px 24px 0; flex-shrink: 0; }
-#page-title { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--white); flex: 1; letter-spacing: -0.3px; }
+#page-title { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 800; color: var(--white); flex: 1; letter-spacing: 0.3px; }
 
 #content { flex: 1; overflow-y: auto; padding: 16px 24px 40px; }
 #content::-webkit-scrollbar { width: 4px; }
@@ -109,9 +109,9 @@ html, body { height: 100%; font-family: 'DM Sans', sans-serif; background: var(-
 
 /* ── Stats ── */
 .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px; }
-.stat-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
-.stat-num { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; line-height: 1; color: var(--white); }
-.stat-label { font-size: 11px; color: var(--t3); margin-top: 2px; }
+.stat-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; min-height: 90px; display: flex; flex-direction: column; justify-content: space-between; }
+.stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 800; line-height: 1; color: var(--white); letter-spacing: 0.5px; }
+.stat-label { font-size: 11px; color: var(--t3); margin-top: 6px; }
 .stat-card.green .stat-num { color: var(--green); }
 .stat-card.amber .stat-num { color: var(--amber); }
 .stat-card.blue .stat-num { color: var(--blue); }
@@ -119,32 +119,33 @@ html, body { height: 100%; font-family: 'DM Sans', sans-serif; background: var(-
 /* ── Section header ── */
 .sec-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; margin-top: 20px; }
 .sec-header:first-child { margin-top: 0; }
-.sec-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); }
+.sec-title { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); }
 .sec-link { font-size: 11.5px; color: var(--t3); cursor: pointer; transition: 0.15s; }
 .sec-link:hover { color: var(--green); }
 
 /* ── Room grid ── */
-.room-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 8px; }
+.room-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 190px)); gap: 8px; }
 .room-card {
   background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 12px;
+  border-radius: var(--radius); padding: 14px;
   cursor: pointer; transition: all 0.18s;
   position: relative; overflow: hidden;
+  min-height: 148px; display: flex; flex-direction: column; justify-content: space-between;
 }
 .room-card::after {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
   background: var(--green); opacity: 0; transition: opacity 0.2s;
 }
-.room-card:hover { background: var(--hover); border-color: var(--t3); transform: translateY(-1px); }
+.room-card:hover { background: var(--hover); border-color: var(--t3); transform: translateY(-2px); }
 .room-card:hover::after { opacity: 0.5; }
 .room-card.occupied::after { background: var(--red); opacity: 0.9; }
 .room-card.booked::after { background: var(--amber); opacity: 0.9; }
-.room-num { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--white); line-height: 1; }
-.room-meta { font-size: 10.5px; color: var(--t3); margin-top: 1px; }
-.room-cap { font-size: 11px; color: var(--t2); margin-top: 6px; }
-.room-tags { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 5px; }
-.tag { font-size: 9.5px; background: var(--active); color: var(--t2); border-radius: 20px; padding: 1px 7px; }
-.status-dot { display: flex; align-items: center; gap: 4px; font-size: 10.5px; margin-top: 7px; }
+.room-num { font-family: 'Barlow Condensed', sans-serif; font-size: 30px; font-weight: 800; color: var(--white); line-height: 1; letter-spacing: 0.5px; }
+.room-meta { font-size: 10.5px; color: var(--t3); margin-top: 2px; }
+.room-cap { font-size: 11px; color: var(--t2); margin-top: 8px; }
+.room-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 5px; }
+.tag { font-size: 9.5px; background: var(--active); color: var(--t2); border-radius: 20px; padding: 2px 7px; }
+.status-dot { display: flex; align-items: center; gap: 4px; font-size: 10.5px; margin-top: 8px; }
 .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
 .dot-green { background: var(--green); }
 .dot-red { background: var(--red); }
@@ -160,7 +161,7 @@ html, body { height: 100%; font-family: 'DM Sans', sans-serif; background: var(-
   padding: 9px 12px; min-width: 155px; flex-shrink: 0;
 }
 .now-card.booked { border-left-color: var(--amber); }
-.now-card-room { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); }
+.now-card-room { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); }
 .now-card-info { font-size: 10.5px; color: var(--t3); margin-top: 2px; line-height: 1.4; }
 
 /* ── Filter chips ── */
@@ -217,7 +218,7 @@ select.select-field option { background: var(--surface); }
   margin-bottom: 6px; transition: border 0.15s;
 }
 .booking-item:hover { border-color: var(--t3); }
-.booking-room { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; color: var(--white); min-width: 58px; padding-top: 2px; }
+.booking-room { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 800; color: var(--white); min-width: 58px; padding-top: 2px; }
 .booking-info { flex: 1; min-width: 0; }
 .booking-id { font-size: 10px; background: var(--active); border-radius: 20px; padding: 1px 8px; color: var(--t2); display: inline-block; margin-bottom: 3px; }
 .booking-title { font-size: 13px; font-weight: 500; color: var(--t1); margin-bottom: 2px; }
@@ -249,7 +250,7 @@ select.select-field option { background: var(--surface); }
   transition: 0.15s;
 }
 .modal-close:hover { background: var(--active); color: var(--white); }
-.modal-title { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 1px; }
+.modal-title { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 1px; }
 .modal-sub { font-size: 11.5px; color: var(--t3); margin-bottom: 14px; }
 .modal-section { font-size: 11px; font-weight: 500; color: var(--t2); text-transform: uppercase; letter-spacing: 0.8px; margin: 12px 0 7px; }
 .modal-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
